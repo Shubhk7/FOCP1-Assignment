@@ -1,4 +1,4 @@
-// Develop a C program to count the number of prime numbers in an array. 
+// Develop a C program to count the number of prime numbers in an array.
 #include <stdio.h>
 int isPrime(int num)
 {
@@ -15,6 +15,25 @@ int isPrime(int num)
 int main()
 {
     int arr[100], numOfElements, primeCount = 0;
-    
+    printf("Enter number of elements in the array: ");
+    scanf("%d", &numOfElements);
+    for (int i = 0; i < numOfElements; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < numOfElements; i++)
+    {
+        if (isPrime(arr[i]))
+        {
+            primeCount++;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    printf("\nNumber of prime numbers in the array: %d\n", primeCount);
+
     return 0;
 }
